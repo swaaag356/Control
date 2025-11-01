@@ -10,18 +10,14 @@ import java.sql.SQLException;
 public class DbConnection {
     private static DataSource dataSource;
 
-    public static void init() {
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    public static void init() throws ClassNotFoundException {
+        Class.forName("org.postgresql.Driver");
 
         HikariConfig config = new HikariConfig("/db.properties");
         dataSource = new HikariDataSource(config);
     }
 
-    public static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException, ClassNotFoundException {
         if (dataSource != null) {
             return dataSource.getConnection();
         } else {

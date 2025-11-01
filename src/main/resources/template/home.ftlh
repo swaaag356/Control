@@ -2,13 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>${title}</title>
+    <title>${title! "Библиотека"}</title>
 </head>
 <body>
 <h1>Библиотека книг</h1>
+
+<#if errormessage??>
+    <p>${errormessage}</p>
+</#if>
+
 <p>
-    <a href="/show">Просмотреть все книги</a>
-    <a href="/add">Добавить новую книгу</a>
+    <a href="/Control_war_exploded/show">Просмотреть все книги</a>
+    <a href="/Control_war_exploded/books/add-book">Добавить новую книгу</a>
 </p>
 </body>
 </html>

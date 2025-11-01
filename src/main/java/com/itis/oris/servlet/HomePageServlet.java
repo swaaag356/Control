@@ -13,6 +13,6 @@ public class HomePageServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setAttribute("title", "Библиотека");
-        req.getRequestDispatcher("/templates/home.ftl").forward(req, resp);
+        req.getRequestDispatcher("/home.ftlh").forward(req, resp);
     }
 }

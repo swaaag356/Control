@@ -6,7 +6,12 @@
 </head>
 <body>
 <h1>Редактировать книгу</h1>
-<form method="post" action="/showone">
+
+<#if errormessage??>
+    <p>${errormessage}</p>
+</#if>
+
+<form method="post" action="/Control_war_exploded/books/showone-book">
     <input type="hidden" name="id" value="${book.id}">
 
     <label>Название</label><br>
@@ -23,6 +28,6 @@
 
     <button type="submit">Сохранить</button>
 </form>
-<p><a href="/show">Назад к списку</a></p>
+<p><a href="/Control_war_exploded/show">Назад к списку</a></p>
 </body>
 </html>

@@ -6,7 +6,12 @@
 </head>
 <body>
 <h1>Добавить новую книгу</h1>
-<form method="post" action="/add">
+
+<#if errormessage??>
+    <p>${errormessage}</p>
+</#if>
+
+<form method="post" action="/Control_war_exploded/books/add-book">
     <label>Название</label><br>
     <input type="text" name="title" required><br><br>
 
@@ -21,6 +26,6 @@
 
     <button type="submit">Добавить</button>
 </form>
-<p><a href="/">На главную</a></p>
+<p><a href="/Control_war_exploded/home">На главную</a></p>
 </body>
 </html>

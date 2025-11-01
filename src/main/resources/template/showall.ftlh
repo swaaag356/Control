@@ -6,7 +6,12 @@
 </head>
 <body>
 <h1>Все книги</h1>
-<table>
+
+<#if errormessage??>
+    <p>${errormessage}</p>
+</#if>
+
+<table border="1" cellpadding="5">
     <tr>
         <th>ID</th>
         <th>Название</th>
@@ -22,10 +27,10 @@
             <td>${book.author}</td>
             <td>${book.genre!''}</td>
             <td>${book.pages!''}</td>
-            <td><a href="/showone?id=${book.id}">Редактировать</a></td>
+            <td><a href="/Control_war_exploded/books/showone-book?id=${book.id}">Редактировать</a></td>
         </tr>
     </#list>
 </table>
-<p><a href="/">На главную</a></p>
+<p><a href="/Control_war_exploded/home">На главную</a></p>
 </body>
 </html>
